@@ -1,4 +1,3 @@
-import { ReactElement } from 'react';
 import { Props as ProductCardProps } from '../../components/ProductCard';
 import { ProductTitleProps } from '../../components/ProductTitle';
 import { ProductImageProps } from '../../components/ProductImage';
@@ -17,7 +16,8 @@ export interface Product{
 export interface ProductContextProps {
     counter: number;
     increaseBy:(value:number)=>void;
-    product: Product
+    product: Product;
+    maxCount?:number
 }
 
 export interface onChangeArgs{
@@ -27,11 +27,26 @@ export interface onChangeArgs{
 
 export interface ProductInCart extends Product{
     count: number
-  }
+}
 
+  
 export interface ProductCardHOCProps{
     ({ product, children }: ProductCardProps ): JSX.Element,
     Title: ( Props: ProductTitleProps) => JSX.Element,
     Image: ( Props: ProductImageProps ) => JSX.Element,
     Buttons: (Props:ProductButtonsProps)=> JSX.Element
 }
+export interface InitialValues{
+    count?:number;
+    maxCount?:number
+}
+
+export interface ProductCardsHandler{
+    count: number;
+    isMaxCountReached: boolean;
+    maxCount?:number;
+    product:Product;
+    increaseBy: (value:number)=>void;
+    reset:()=>void
+}
+
