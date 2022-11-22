@@ -23,8 +23,8 @@ export const CustomInput = ({ className,name, value, placeholder, type, handlerF
         onChange={handlerFunction}
         className={`${className} ${value.trim().length <= 0 && "has-error"} ${validateFieldFunction && !validateFieldFunction(value) && "has-error"}`}
       />
-      {value.trim().length <= 0 && <span>{`the field ${name} can not be blank`}</span>}
-      {validateFieldFunction && !validateFieldFunction(value) && <span>{`the ${name} is not valid`}</span>}
+      {/* {value.trim().length <= 0 && <span>{`the field ${name} can not be blank`}</span>} */}
+      {/* {validateFieldFunction && !validateFieldFunction(value) && <span>{`the ${name} is not valid`}</span>} */}
 
             
     </>
